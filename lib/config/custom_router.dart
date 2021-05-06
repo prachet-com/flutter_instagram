@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_instagram/screens/screens.dart';
+import 'package:flutter_instagram/screens/signup/signup_screen.dart';
 
 class CustomRouter {
   static getRoutes() {
@@ -8,6 +9,7 @@ class CustomRouter {
       SplashScreen.routeName: (ctx) => SplashScreen(),
       LoginScreen.routeName: (ctx) => LoginScreen(),
       NavScreen.routeName: (ctx) => NavScreen(),
+      SignupScreen.routeName: (ctx) => SignupScreen(),
     };
   }
 
