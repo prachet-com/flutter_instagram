@@ -6,38 +6,40 @@ class CustomRouter {
     return {
       "/": (ctx) => SplashScreen(),
       SplashScreen.routeName: (ctx) => SplashScreen(),
+      LoginScreen.routeName: (ctx) => LoginScreen(),
+      NavScreen.routeName: (ctx) => NavScreen(),
     };
   }
 
-  // }
-  //
-  //
-  // static Route onGenerateRoute(RouteSettings settings) {
-  //   print('Route: ${settings.name}');
-  //   switch (settings.name) {
-  //     case '/':
-  //       return MaterialPageRoute(
-  //         settings: const RouteSettings(name: '/'),
-  //         builder: (_) => Scaffold(
-  //             appBar: AppBar(
-  //               title: const Text('Flutter Instagram'),
-  //             ),
-  //             body: Container()),
-  //       );
-  //     default:
-  //       return _errorRoute();
-  //   }
-  // }
-  //
-  // static Route _errorRoute() {
-  //   return MaterialPageRoute(
-  //       settings: const RouteSettings(name: '/error'),
-  //       builder: (_) => Scaffold(
-  //           appBar: AppBar(
-  //             title: Text('Error'),
-  //           ),
-  //           body: const Center(
-  //             child: Text('Something went wrong'),
-  //           )));
-  // }
+// }
+//
+//
+// static Route onGenerateRoute(RouteSettings settings) {
+//   print('Route: ${settings.name}');
+//   switch (settings.name) {
+//     case '/':
+//       return MaterialPageRoute(
+//         settings: const RouteSettings(name: '/'),
+//         builder: (_) => Scaffold(
+//             appBar: AppBar(
+//               title: const Text('Flutter Instagram'),
+//             ),
+//             body: Container()),
+//       );
+//     default:
+//       return _errorRoute();
+//   }
+// }
+//
+// static Route _errorRoute() {
+//   return MaterialPageRoute(
+//       settings: const RouteSettings(name: '/error'),
+//       builder: (_) => Scaffold(
+//           appBar: AppBar(
+//             title: Text('Error'),
+//           ),
+//           body: const Center(
+//             child: Text('Something went wrong'),
+//           )));
+// }
 }
