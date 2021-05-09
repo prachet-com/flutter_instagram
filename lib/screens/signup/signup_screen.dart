@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_instagram/blocs/auth/auth_bloc.dart';
+// import 'package:flutter_instagram/blocs/auth/auth_bloc.dart';
 import 'package:flutter_instagram/repositories/auth/auth_repository.dart';
 import './cubit/signup_cubit.dart';
 

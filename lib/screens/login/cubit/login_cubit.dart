@@ -36,4 +36,16 @@ class LoginCubit extends Cubit<LoginState> {
       emit(state.copyWith(status: LoginStatus.error, failure: err));
     }
   }
+
+  void loginWithGoogle () async {
+    await _authRepository.googleSignIn();
+  }
+
+  void signInAnonymously () async {
+    await _authRepository.signInAnonymously();
+  }
+
+  void logout() async {
+    await _authRepository.logout();
+  }
 }

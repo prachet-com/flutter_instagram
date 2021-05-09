@@ -14,5 +14,9 @@ abstract class BaseAuthRepository {
     String password,
   });
 
+  Future<auth.User> googleSignIn();
+
+  Future<auth.User> signInAnonymously();
+
   Future<void> logout();
 }
