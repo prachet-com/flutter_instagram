@@ -4,6 +4,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_instagram/repositories/auth/auth_repository.dart';
 import 'package:flutter_instagram/screens/login/cubit/login_cubit.dart';
 import 'package:flutter_instagram/screens/signup/signup_screen.dart';
+import 'package:flutter_instagram/widgets/error_dialog.dart';
 
 class LoginScreen extends StatelessWidget {
   static const routeName = "/login";
@@ -27,10 +28,7 @@ class LoginScreen extends StatelessWidget {
             if (state.status == LoginStatus.error) {
               showDialog(
                 context: context,
-                builder: (context) => AlertDialog(
-                  title: Text('Error'),
-                  content: Text(state.failure.message),
-                ),
+                builder: (context) => ErrorDialog(content: state.failure.message,),
               );
             }
           },
@@ -59,6 +57,9 @@ class LoginScreen extends StatelessWidget {
                               textAlign: TextAlign.center,
                             ),
                             const SizedBox(height: 12.0),
+
+
+
                             // TextFormField(
                             //   decoration: InputDecoration(hintText: "Email"),
                             //   keyboardType: TextInputType.emailAddress,
@@ -108,6 +109,9 @@ class LoginScreen extends StatelessWidget {
                             //       backgroundColor: Colors.black12),
                             // ),
                             // Divider(),
+
+
+
                             ElevatedButton(
                               onPressed: () {
                                 context.read<AuthRepository>().googleSignIn();
