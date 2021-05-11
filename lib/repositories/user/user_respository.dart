@@ -29,4 +29,15 @@ class UserRepository extends BaseUserRepository {
         .doc(user.id)
         .update(user.toDocument());
   }
+
+  Future<List<UserModel>> getAllUsers() async {
+    QuerySnapshot<UserModel> querySnapshot = await _firebaseFirestore
+        .collection(Paths.users)
+        .get() as QuerySnapshot<UserModel>;
+    return UserModel.getUserListFromQuerySnapshot(querySnapshot);
+  }
+
+  Future<void> deleteUser(String userId) async {
+    await _firebaseFirestore.collection(Paths.users).doc(userId).delete();
+  }
 }

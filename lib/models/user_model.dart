@@ -81,4 +81,13 @@ class UserModel extends Equatable {
       bio: data.bio ?? '',
     );
   }
+
+  static List<UserModel> getUserListFromQuerySnapshot(
+      QuerySnapshot<UserModel> querySnapshot) {
+    List<UserModel> users = [];
+    querySnapshot.docs.forEach((QueryDocumentSnapshot<UserModel> userSnapshot) {
+      users.add(UserModel.fromDocument(userSnapshot));
+    });
+    return users;
+  }
 }
